@@ -6,8 +6,6 @@ import shutil
 import os
 import sys
 
-from .Auth import send_qr_func
-
 def get_mime(ext): 
     MIME_TYPE = {
         'txt': 'text/plain',
@@ -135,14 +133,11 @@ class WAClient:
     async def __trigger_async_function(self, data: str):
         if data.startswith('QR'):
             qr_data= data.replace('QR:','')
-            # img = generate_qr(qr_data)
-            # await send_qr_func(img)
             printQr(qr_data)
 
         if data.startswith('Connected'):
             await send_qr_func('test',connected=True)
             print("Connected")
-            # os.execl(sys.executable, sys.executable, *sys.argv)
 
         if data.startswith('Logged'):
             print("logout")
