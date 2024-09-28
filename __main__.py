@@ -165,7 +165,6 @@ class WAClient:
         data = f"{chat_id},{FilePath},{fileName},{mimeType},{caption}"
         await self.__do_post__(command,data)
 
-
     async def send_video(self,chat_id,video,caption):
         command = "sendVideo"
         data = f"{chat_id},{video},{caption}"
