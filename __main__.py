@@ -136,7 +136,6 @@ class WAClient:
             printQr(qr_data)
 
         if data.startswith('Connected'):
-            await send_qr_func('test',connected=True)
             print("Connected")
 
         if data.startswith('Logged'):
