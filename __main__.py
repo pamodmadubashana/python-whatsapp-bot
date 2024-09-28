@@ -72,12 +72,12 @@ def get_mime(ext):
       }
 
     return MIME_TYPE.get(ext, 'application/octet-stream')
+    
 def printQr(qr_code_url):
     qr = qrcode.QRCode()
     qr.add_data(qr_code_url)
     qr.make()
     qr.print_ascii(invert=True) 
-
 
 def generate_qr(data, filename='qr.png'):
     qr = qrcode.QRCode(
