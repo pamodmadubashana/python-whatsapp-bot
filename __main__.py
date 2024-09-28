@@ -176,7 +176,6 @@ class WAClient:
         extention = audio.split('.')[-1]
         mimeType = get_mime(extention)
         data = f"{chat_id},{audio},{mimeType}"
-        print(data)
         await self.__do_post__(command,data)
 
     async def send_sticker(self,chat_id: str,sticker: str):
